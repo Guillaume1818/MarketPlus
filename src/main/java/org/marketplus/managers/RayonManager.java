@@ -22,7 +22,7 @@ public class RayonManager {
     }
 
     public void loadArticles() {
-        Article coca = new Article(0, "Coca", 2.0, 20, 01011);
+        Article coca = new Article(0, "Coca", 2.0, 20, 2);
         Article biscotte = new Article(1, "Biscotte", 1.5, 15, 9310);
         Article ampoule = new Article(2, "Ampoule", 3.5, 10, 8975);
         Article tele = new Article(3, "Téléviseur", 100, 4, 87869);
@@ -93,6 +93,23 @@ public class RayonManager {
             }
         }
         return null;
+    }
+
+    public Article getArticleByEAN(int ean) {
+        for(Rayon r : allRayons) {
+            for(Article a : r.getArticles()) {
+                if(a.getEan() == ean) {
+                    return a;
+                }
+            }
+        }
+        return null;
+    }
+
+    public void supprimerArticle(Article a) {
+        for(Rayon r : allRayons) {
+            r.removeArticle(a);
+        }
     }
 
 }

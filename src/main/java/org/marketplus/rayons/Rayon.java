@@ -43,4 +43,8 @@ public class Rayon {
     public String getName() {
         return name;
     }
+
+    public void removeArticle(Article a) {
+        articles.remove(a);
+    }
 }

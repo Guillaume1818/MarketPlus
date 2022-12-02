@@ -6,9 +6,9 @@ public class Article {
     private String name;
     private double price;
     private int stock;
-    private int ean;
+    private long ean;
 
-    public Article(int id, String name, double price, int stock, int ean) {
+    public Article(int id, String name, double price, int stock, long ean) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -32,7 +32,7 @@ public class Article {
         return stock;
     }
 
-    public int getEan() {
+    public long getEan() {
         return ean;
     }
 

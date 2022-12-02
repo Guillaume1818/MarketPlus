@@ -34,6 +34,8 @@ public class MenuManager {
             consultArticleRayonMenu();
         } else if(input == 3) {
             ajoutArticleMenu();
+        } else if(input == 4) {
+            supprimerArticleMenu();
         }
     }
 
@@ -107,6 +109,22 @@ public class MenuManager {
         System.out.println("Article ajouté !");
         mainMenu();
     }
+
+    public void supprimerArticleMenu() {
+        System.out.println("Suppression Article");
+        System.out.println("EAN: ");
+        Scanner sc = new Scanner(System.in);
+        int ean = sc.nextInt();
+        Article a = rayonManager.getArticleByEAN(ean);
+        if(a == null) {
+            System.out.println("Article inconnu");
+        } else {
+            rayonManager.supprimerArticle(a);
+        }
+        System.out.println("L'article a bien été supprimé");
+        mainMenu();
+    }
+
 
     public void displayArticle(Article a) {
         System.out.println(a.getId() + " - " + a.getName() + " - " + a.getPrice() + " - " + a.getStock() + " - " + a.getEan());
