@@ -95,6 +95,15 @@ public class RayonManager {
         return null;
     }
 
+    public static Rayon getRayonByArticle(Article a) {
+        for(Rayon r : allRayons) {
+            if(r.getArticles().contains(a)) {
+                return r;
+            }
+        }
+        return null;
+    }
+
     public Article getArticleByEAN(int ean) {
         for(Rayon r : allRayons) {
             for(Article a : r.getArticles()) {

@@ -14,7 +14,7 @@ public class Rayon {
     private String name;
     private Stats stats;
     private Employe responsable;
-    private Employe employes[];
+    private List<Employe> employes;
     private List<Article> articles;
 
     public Rayon(int id, String position, String name) {
@@ -45,6 +45,9 @@ public class Rayon {
     }
 
     public void removeArticle(Article a) {
-        articles.remove(a);
+        if(articles.contains(a)) {
+            articles.remove(a);
+        }
     }
+
 }

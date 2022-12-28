@@ -2,6 +2,7 @@ package org.marketplus;
 
 import org.marketplus.managers.MenuManager;
 import org.marketplus.managers.RayonManager;
+import org.marketplus.managers.StatManager;
 import org.marketplus.rayons.Brico;
 import org.marketplus.rayons.Multimedia;
 import org.marketplus.rayons.PGC;
@@ -17,7 +18,8 @@ public class Main {
     public static void main(String[] args) {
         //LOADS
         RayonManager rayonManager = new RayonManager();
-        MenuManager menuManager = new MenuManager(rayonManager);
+        StatManager statManager = new StatManager();
+        MenuManager menuManager = new MenuManager(rayonManager, statManager);
 
         rayonManager.load();
 

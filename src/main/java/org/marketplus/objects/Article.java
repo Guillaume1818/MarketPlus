@@ -36,4 +36,12 @@ public class Article {
         return ean;
     }
 
+    public Vente vente(int nbr) {
+        if(stock > nbr) {
+            stock-=nbr;
+            return new Vente(this, nbr);
+        }
+        return null;
+    }
+
 }
